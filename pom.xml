@@ -7,7 +7,7 @@
     <groupId>org.lmq.spark.kafka</groupId>
     <artifactId>spark-kafka</artifactId>
     <packaging>pom</packaging>
-    <version>${spark.version}</version>
+    <version>1.6.0</version>
     <modules>
         <module>spark-kafka-0-8</module>
         <module>spark-streaming-kafka-0-10</module>
