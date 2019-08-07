@@ -52,7 +52,7 @@ Spark kafka
  (Support Kafka SSL (0.10+,spark 1.6+))
  - Add parameters ： 'kafka.consumer.from' To dynamically decide whether to get Kafka data from last or from consumption point
  - The version support of spark2.x Kafka 0.10+ is provided.（0.8, there is a big change compared to the 0.10 version.）
- - https://github.com/LinMingQiang/spark-util/tree/spark-kafka-0-8_1.6  或者  https://github.com/LinMingQiang/spark-kafka
+ - https://github.com/LinMingQiang/sparkstreaming-kafka
  ```
    val kp = SparkKafkaContext.getKafkaParam(brokers,groupId,"consum","earliest")
    val skc = new SparkKafkaContext(kp,sparkconf)
@@ -79,7 +79,6 @@ Spark Hbase
  * 根据RDD的数据来批量更新rdd数据并写回hbase  <br>
  spark RDD[T] update with hbase data then put return to hbase <br>
   RDD[T] -> Get -> Combine -> Put -> Hbase
- - https://github.com/LinMingQiang/spark-util/tree/spark-hbase
  ```
     val conf = new SparkConf().setMaster("local").setAppName("tets")
     val sc = new SparkContext(conf)
@@ -95,7 +94,6 @@ Spark ES Util
 ElasticSearch integration for Apache Spark  <br>
 - scan es数据为rdd  <br>
 Scanning es data into RDD <br>
-- https://github.com/LinMingQiang/spark-util/tree/spark-es
 ```
 sc.esRDD("testindex/testtype", query)
 
@@ -109,7 +107,6 @@ Read kudu data into RDD <br>
 - 讲rdd数据写入kudu  <br>
 Write RDD data to kudu <br>
 - draw lessons from: https://github.com/tmalaska/SparkOnKudu
-- https://github.com/LinMingQiang/spark-util/tree/spark-kudu
 
 <a name="Flink-kafka"></a>
 Flink kafka
@@ -132,30 +129,26 @@ Kafka Util
 ------------
 *  操作kafka工具类，提供每天记录主题的偏移量，主要用于日重新计算、小时重新计算等功能。  <br>
 Operate the tool class of kafka, provide offset to record topic by day, mainly used for day recalculation, hour recalculation and other functions  <br>
-- https://github.com/LinMingQiang/spark-util/tree/kafka-util
+
 
 <a name="Hbase-Util"></a>
 Hbase Util
 ------------
 * 操作Hbase的工具类，查询HBase表的region信息，用于手动分割过大的region <br>
 The tool class that operates Hbase, inquires the region information of HBase table, used for manual split some excessive region  <br>
-- https://github.com/LinMingQiang/spark-util/tree/hbase-util
 
 <a name="Database-util"></a>
 database util
 ------------
 * Provides a connection tool for each database. include: es,hbase,mysql,mongo  <br>
-- https://github.com/LinMingQiang/spark-util/tree/database-util
 
 <a name="Elasticserach-shade"></a>
 Elasticserach shade
 ------------
 * Resolving conflicts between ES and spark and Hadoop related packages <br>
-- https://github.com/LinMingQiang/spark-util/tree/es-shaed
 
 <a name="Rabbitmq-util"></a>
 Rabbitmq util
 ------------
 * A tool class for sending and consuming MQ messages  <br>
-https://github.com/LinMingQiang/spark-util/tree/rabbitmq-util
 
