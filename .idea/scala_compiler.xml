@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="Maven 1" modules="spark-kafka-0-10">
+      <parameters>
+        <parameter value="-dependencyfile" />
+        <parameter value="D:\workspace\mygitWS\sparkstreaming-kafka\spark-kafka-0-10\target/.scala_dependencies" />
+      </parameters>
+    </profile>
+    <profile name="Maven 2" modules="spark-kafka-0-8">
+      <parameters>
+        <parameter value="-dependencyfile" />
+        <parameter value="D:\workspace\mygitWS\sparkstreaming-kafka\spark-kafka-0-8\target/.scala_dependencies" />
+      </parameters>
+    </profile>
+    <profile name="Maven 3" modules="spark-streaming-kafka-0-10">
+      <parameters>
+        <parameter value="-make:transitive" />
+        <parameter value="-dependencyfile" />
+        <parameter value="D:\workspace\mygitWS\sparkstreaming-kafka\spark-streaming-kafka-0-10\target/.scala_dependencies" />
+      </parameters>
+    </profile>
+  </component>
+</project>
