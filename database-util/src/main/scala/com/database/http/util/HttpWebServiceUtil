@@ -1,0 +1,49 @@
+object HttpWebServiceUtil {
+  def getConn(url: String): Connection = {
+    val conn = Jsoup
+      .connect(url)
+      .timeout(10000)
+      .ignoreContentType(true);
+    conn.header("Content-Type", "application/json")
+    conn
+  }
+
+  /**
+    *
+    * @param url
+    * @param json
+    * @return
+    */
+  def getCreativeFeats(url: String, json: String): String = {
+    try {
+      val conn = getConn(url)
+      conn.data("creativeId", "10000000246")
+      conn.data("identityKey", "7cab42776a7ab9406c3f8f1d0d9cc7e3")
+      // conn.requestBody(json)
+      var docString = conn.get()
+      docString.toString
+    } catch {
+      case t: Throwable =>
+        null
+    }
+
+  }
+
+  def jsoupPostData(url: String, json: String): Unit = {
+    val conn = getConn(url)
+    conn.requestBody(json) // 发送得内容
+    conn.get().body().text()
+  }
+
+  /**
+    *
+    * @param args
+    */
+  def main(args: Array[String]): Unit = {
+    val json = JSON.parseObject("{}")
+    json.put("creativeid", "10000000246")
+    json.put("identityKey", "7cab42776a7ab9406c3f8f1d0d9cc7e3")
+    val r = getCreativeFeats("http://10.21.141.36:5000/features/creative",
+                             json.toString())
+    println("", r)
+  }
