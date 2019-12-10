@@ -21,6 +21,7 @@ object HttpWebServiceUtil {
       conn.data("identityKey", "7cab42776a7ab9406c3f8f1d0d9cc7e3")
       // conn.requestBody(json)
       var docString = conn.get()
+     // docString.body()
       docString.toString
     } catch {
       case t: Throwable =>
