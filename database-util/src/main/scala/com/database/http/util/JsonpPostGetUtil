@@ -1,4 +1,4 @@
-object HttpWebServiceUtil {
+object JsonpPostGetUtil {
   def getConn(url: String): Connection = {
     val conn = Jsoup
       .connect(url)
