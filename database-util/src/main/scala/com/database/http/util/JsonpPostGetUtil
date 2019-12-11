@@ -3,6 +3,7 @@ object JsonpPostGetUtil {
     val conn = Jsoup
       .connect(url)
       .timeout(10000)
+       .maxBodySize(0) // 不限制返回的数据大小
       .ignoreContentType(true);
     conn.header("Content-Type", "application/json")
     conn
